@@ -269,16 +269,6 @@ export function Hero() {
 
         {/* Mobile Portrait - Below content */}
         <div className="lg:hidden absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2">
-          <div 
-            ref={portraitRef}
-            className="w-40 sm:w-48 h-52 sm:h-64 rounded-2xl overflow-hidden shadow-card sm:hidden"
-          >
-            <img
-              src="/hero-portrait.jpg"
-              alt="Peter Maina Chege"
-              className="w-full h-full object-cover"
-            />
-          </div>
           <p
             ref={captionRef}
             className="text-center text-xs sm:text-sm text-muted-foreground mt-3"
