@@ -1,33 +1,45 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: 'StayCloud',
-    subtitle: 'Hotel Room Booking Platform',
+    title: "StayCloud",
+    subtitle: "Hotel Room Booking Platform",
     description:
-      'A mobile-first booking system with real-time sync, Stripe payments, and secure role-based access. Built with performance in mind, featuring infinite scroll, lazy loading, and Firestore caching.',
-    image: '/project-staycloud.jpg',
-    tags: ['React', 'Redux Toolkit', 'Stripe', 'Express', 'PostgreSQL'],
+      "A mobile-first booking system with real-time sync, Stripe payments, and secure role-based access. Built with performance in mind, featuring infinite scroll, lazy loading, and Firestore caching.",
+    image: "/project-staycloud.jpg",
+    tags: ["React", "Redux Toolkit", "Stripe", "Express", "PostgreSQL"],
     links: {
-      live: '#',
-      github: '#',
+      live: "https://stay-cloud-rooms.netlify.app/",
+      github: "https://github.com/CodeWithMaina/Hotel-Room-Booking-Frontend",
+      frontend:
+        "https://github.com/CodeWithMaina/Restaurant-Management-Fontend",
+      backend: "https://github.com/CodeWithMaina/Restaurant-Management-API",
     },
   },
   {
-    title: 'Restaurant Management System',
-    subtitle: 'Role-based Management API',
+    title: "Restaurant Management System",
+    subtitle: "Role-based Management API",
     description:
-      'A comprehensive restaurant management platform with secure authentication, responsive dashboards, and optimized database schema. Reduced data redundancy by 60% using Dockerized architecture.',
-    image: '/project-restaurant.jpg',
-    tags: ['React', 'TypeScript', 'Node.js', 'DrizzleORM', 'PostgreSQL', 'Docker'],
+      "A comprehensive restaurant management platform with secure authentication, responsive dashboards, and optimized database schema. Reduced data redundancy by 60% using Dockerized architecture.",
+    image: "/project-restaurant.jpg",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "DrizzleORM",
+      "PostgreSQL",
+      "Docker",
+    ],
     links: {
-      github: '#',
+      frontend:
+        "https://github.com/CodeWithMaina/Restaurant-Management-Fontend",
+      backend: "https://github.com/CodeWithMaina/Restaurant-Management-API",
     },
   },
 ];
@@ -52,18 +64,18 @@ export function FeaturedProjects() {
           duration: 0.6,
           scrollTrigger: {
             trigger: headingRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            start: "top 80%",
+            toggleActions: "play none none reverse",
           },
-        }
+        },
       );
 
       // Project cards animation
-      const cards = cardsRef.current?.querySelectorAll('.project-card');
+      const cards = cardsRef.current?.querySelectorAll(".project-card");
       if (cards) {
         cards.forEach((card) => {
-          const image = card.querySelector('.project-image');
-          const tags = card.querySelectorAll('.project-tag');
+          const image = card.querySelector(".project-image");
+          const tags = card.querySelectorAll(".project-tag");
 
           gsap.fromTo(
             card,
@@ -75,10 +87,10 @@ export function FeaturedProjects() {
               duration: 0.7,
               scrollTrigger: {
                 trigger: card,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse',
+                start: "top 85%",
+                toggleActions: "play none none reverse",
               },
-            }
+            },
           );
 
           if (image) {
@@ -93,10 +105,10 @@ export function FeaturedProjects() {
                 delay: 0.1,
                 scrollTrigger: {
                   trigger: card,
-                  start: 'top 85%',
-                  toggleActions: 'play none none reverse',
+                  start: "top 85%",
+                  toggleActions: "play none none reverse",
                 },
-              }
+              },
             );
           }
 
@@ -112,10 +124,10 @@ export function FeaturedProjects() {
                 delay: 0.2,
                 scrollTrigger: {
                   trigger: card,
-                  start: 'top 85%',
-                  toggleActions: 'play none none reverse',
+                  start: "top 85%",
+                  toggleActions: "play none none reverse",
                 },
-              }
+              },
             );
           }
         });
@@ -136,7 +148,7 @@ export function FeaturedProjects() {
         <h2
           ref={headingRef}
           className="font-heading font-bold text-foreground leading-tight tracking-tight"
-          style={{ fontSize: 'clamp(2rem, 3.6vw, 3.5rem)' }}
+          style={{ fontSize: "clamp(2rem, 3.6vw, 3.5rem)" }}
         >
           Featured Projects
         </h2>
@@ -185,22 +197,73 @@ export function FeaturedProjects() {
                 <div className="flex flex-wrap gap-3 mt-6">
                   {project.links.live && (
                     <Button
+                      asChild
                       variant="default"
                       size="sm"
                       className="rounded-xl bg-foreground text-background hover:bg-foreground/90"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      <a
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
                     </Button>
                   )}
+
                   {project.links.github && (
                     <Button
+                      asChild
                       variant="outline"
                       size="sm"
                       className="rounded-xl border-border hover:bg-muted"
                     >
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </a>
+                    </Button>
+                  )}
+
+                  {project.links.frontend && (
+                    <Button
+                      asChild
+                      variant="default"
+                      size="sm"
+                      className="rounded-xl bg-foreground text-background hover:bg-foreground/90"
+                    >
+                      <a
+                        href={project.links.frontend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Frontend
+                      </a>
+                    </Button>
+                  )}
+
+                  {project.links.backend && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="rounded-xl border-border hover:bg-muted"
+                    >
+                      <a
+                        href={project.links.backend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Backend
+                      </a>
                     </Button>
                   )}
                 </div>

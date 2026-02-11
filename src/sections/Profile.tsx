@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, Globe, Layers } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const facts = [
-  { icon: Calendar, label: '5+ years shipping' },
+  { icon: Calendar, label: '3+ years shipping' },
   { icon: Layers, label: 'Full-stack / Cloud' },
   { icon: Globe, label: 'Remote-first' },
 ];
@@ -144,7 +144,7 @@ export function Profile() {
           className="w-full max-w-[280px] sm:max-w-sm lg:w-[44vw] lg:max-w-none lg:h-[68vh] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-shadow duration-500 flex-shrink-0"
         >
           <img
-            src="/profile-photo.jpg"
+            src="../../public/me1.jpeg"
             alt="Peter Maina Chege"
             className="w-full h-56 sm:h-64 lg:h-full object-cover"
           />
