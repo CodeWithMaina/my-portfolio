@@ -270,7 +270,7 @@ export function Hero() {
                 View selected work
                 <ArrowDown className="w-4 h-4 ml-2" />
               </Button>
-              <a href="../../public/Peter-Maina-Chege-Central-Resume.pdf" download>
+              <a href="/Peter-Maina-Chege-Central-Resume.pdf" download>
                 <Button
                   variant="outline"
                   className="rounded-xl px-5 sm:px-6 py-5 text-sm font-medium border-border hover:bg-muted transition-all duration-300 hover:-translate-y-0.5"
@@ -288,7 +288,7 @@ export function Hero() {
             className="hidden lg:block absolute right-[4vw] xl:right-[6vw] top-[15vh] xl:top-[18vh] w-[32vw] xl:w-[34vw] h-[58vh] xl:h-[64vh] rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-shadow duration-500"
           >
             <img
-              src="../../public/me.jpeg"
+              src="/me.jpeg"
               alt="Peter Maina Chege"
               className="w-full h-full object-cover"
             />
