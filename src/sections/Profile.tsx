@@ -144,7 +144,7 @@ export function Profile() {
           className="w-full max-w-[280px] sm:max-w-sm lg:w-[44vw] lg:max-w-none lg:h-[68vh] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-shadow duration-500 flex-shrink-0"
         >
           <img
-            src="../../public/me1.jpeg"
+            src="/me1.jpeg"
             alt="Peter Maina Chege"
             className="w-full h-56 sm:h-64 lg:h-full object-cover"
           />
