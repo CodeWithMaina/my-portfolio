@@ -52,30 +52,29 @@ export function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-5 max-w-screen-2xl mx-auto">
+        <div className="flex items-center justify-between px-6 lg:px-10 py-4 lg:py-5">
           {/* Logo */}
           <a
             href="#"
-            className="font-heading font-semibold text-base sm:text-lg lg:text-xl tracking-tight text-foreground hover:opacity-70 transition-opacity"
+            className="font-heading font-semibold text-lg lg:text-xl tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
-            <span className="hidden sm:inline">Peter Maina Chege</span>
-            <span className="sm:hidden">PMC</span>
+            Peter Maina Chege
           </a>
 
           {/* Right side actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-3">
             {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full w-9 h-9 sm:w-10 sm:h-10 hover:bg-muted"
+              className="rounded-full w-10 h-10 hover:bg-muted"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <Moon className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Moon className="w-5 h-5" />
               ) : (
-                <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Sun className="w-5 h-5" />
               )}
             </Button>
 
@@ -84,7 +83,7 @@ export function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(true)}
-              className="font-medium text-xs sm:text-sm hover:bg-muted rounded-full px-3 sm:px-4"
+              className="font-medium text-sm hover:bg-muted rounded-full px-4"
             >
               Menu
             </Button>
@@ -107,25 +106,24 @@ export function Navigation() {
         {/* Menu Content */}
         <div className="relative h-full flex flex-col">
           {/* Menu Header */}
-          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-5 max-w-screen-2xl mx-auto w-full">
-            <span className="font-heading font-semibold text-base sm:text-lg lg:text-xl tracking-tight text-foreground">
-              <span className="hidden sm:inline">Peter Maina Chege</span>
-              <span className="sm:hidden">PMC</span>
+          <div className="flex items-center justify-between px-6 lg:px-10 py-4 lg:py-5">
+            <span className="font-heading font-semibold text-lg lg:text-xl tracking-tight text-foreground">
+              Peter Maina Chege
             </span>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="rounded-full w-9 h-9 sm:w-10 sm:h-10 hover:bg-muted"
+              className="rounded-full w-10 h-10 hover:bg-muted"
               aria-label="Close menu"
             >
-              <X className="w-4 h-4 sm:w-5 sm:h-5" />
+              <X className="w-5 h-5" />
             </Button>
           </div>
 
           {/* Menu Links */}
-          <nav className="flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-10 lg:px-20 xl:px-24 max-w-screen-2xl mx-auto w-full">
-            <ul className="space-y-1 sm:space-y-2">
+          <nav className="flex-1 flex flex-col justify-center px-6 lg:px-20">
+            <ul className="space-y-2">
               {navLinks.map((link, index) => (
                 <li
                   key={link.href}
@@ -138,12 +136,12 @@ export function Navigation() {
                 >
                   <button
                     onClick={() => handleLinkClick(link.href)}
-                    className="group flex items-center gap-3 sm:gap-4 py-2 sm:py-3 w-full text-left"
+                    className="group flex items-center gap-4 py-3 w-full text-left"
                   >
-                    <span className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-widest w-6 sm:w-8 flex-shrink-0">
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest w-8">
                       0{index + 1}
                     </span>
-                    <span className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-foreground group-hover:text-babyblue-400 transition-colors leading-tight">
+                    <span className="font-heading text-4xl lg:text-6xl font-medium text-foreground group-hover:text-babyblue-400 transition-colors">
                       {link.label}
                     </span>
                   </button>
@@ -153,17 +151,17 @@ export function Navigation() {
           </nav>
 
           {/* Menu Footer */}
-          <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-4 sm:py-6 lg:py-8 max-w-screen-2xl mx-auto w-full">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-              <p className="text-xs sm:text-sm text-muted-foreground">
+          <div className="px-6 lg:px-10 py-6 lg:py-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <p className="text-sm text-muted-foreground">
                 Full-Stack Engineer based in Kenya
               </p>
-              <div className="flex items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-6">
                 <a
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   GitHub
                 </a>
@@ -171,13 +169,13 @@ export function Navigation() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   LinkedIn
                 </a>
                 <a
                   href="mailto:peter@example.com"
-                  className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Email
                 </a>
